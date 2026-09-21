@@ -1,0 +1,54 @@
+# Paths are relative to the VisA repository root, NOT the terminal's current folder.
+# Optional overrides belong in config.local.yaml (ignored by Git).
+schema_version: 1
+paths:
+  visa_source: .
+  dataset: yolo_chewinggum
+  weights: training/weights/yolo26n.pt
+  work: training/work
+conversion:
+  category: chewinggum
+  split: [0.70, 0.15, 0.15]
+  seed: 42
+  previews: 24
+aws:
+  profile: ""                      # Empty = default AWS credential chain; or a named CLI profile
+  region: eu-central-1
+  bucket: ""                       # REQUIRED: an existing bucket in this region
+  prefix: visa-yolo/chewinggum     # New, dedicated prefix, never production data
+  execution_role_arn: ""           # Optional; otherwise resolve role_name via IAM
+  role_name: SageMakerExecutionRole
+  job_prefix: visa-yolo-train
+  instance_type: ml.g4dn.xlarge
+  instance_count: 1
+  volume_size_gb: 30
+  image_uri: "763104351884.dkr.ecr.{region}.amazonaws.com/pytorch-training:2.2.0-gpu-py310-cu121-ubuntu20.04-sagemaker"
+  max_run_seconds: 1800
+  # Optional KMS key ARN for S3 uploads, artifacts and the training volume.
+  kms_key_arn: ""
+training:
+  model: yolo26n.pt
+  ultralytics_version: 8.4.60
+  epochs: 1
+  batch: 1
+  workers: 0
+  imgsz: 640
+  seed: 42
+  patience: 20
+  optimizer: auto
+  # FP32 avoids AMP checks downloading any auxiliary model.
+  amp: false
+  deterministic: true
+  evaluate_test: false
+  export_onnx: false
+presets:
+  smoke:
+    epochs: 1
+    batch: 1
+    workers: 0
+    max_run_seconds: 1800
+  full:
+    epochs: 60
+    batch: 1
+    workers: 0
+    max_run_seconds: 14400

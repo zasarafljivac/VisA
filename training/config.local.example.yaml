@@ -1,0 +1,9 @@
+# Copy to config.local.yaml and change the bucket. Never put AWS keys in this file.
+aws:
+  bucket: REPLACE_WITH_YOUR_EXISTING_BUCKET
+  # profile: your-aws-cli-profile   # default: standard AWS credential chain
+  # region: eu-central-1
+  # execution_role_arn: arn:aws:iam::YOUR_ACCOUNT_ID:role/SageMakerExecutionRole
+# Reuse your existing model file instead of downloading it again:
+# paths:
+#   weights: /absolute/path/to/yolo26n.pt

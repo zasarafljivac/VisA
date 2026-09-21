@@ -26,12 +26,20 @@ python visa_yolo_tools/convert_visa_to_yolo.py --source . --output ./yolo_chewin
 
 Then open `yolo_chewinggum/previews/index.html` to check the boxes against the masks.
 
+## Optional: training on SageMaker
+
+[training/](training/) contains a small controller that validates the converted dataset and
+submits a single YOLO26n training job to Amazon SageMaker using your own AWS credentials,
+bucket and execution role. Nothing is uploaded and no job is created without an explicit
+`--execute`. See the training README in [English](training/README_EN.md) or [Bosnian](training/README_BS.md).
+
 ## Documentation
 
 - [README in English](visa_yolo_tools/README_EN.md)
 - [README na bosanskom](visa_yolo_tools/README_BS.md)
 - [Test report in English](visa_yolo_tools/TEST_REPORT_EN.md)
 - [Izvještaj o provjeri na bosanskom](visa_yolo_tools/TEST_REPORT_BS.md)
+- Training README in [English](training/README_EN.md) / [na bosanskom](training/README_BS.md), and the [training test report](training/TEST_REPORT.md)
 - [Dataset source and attribution](visa_yolo_tools/SOURCE_ATTRIBUTION.md)
 
 ## License

@@ -37,6 +37,13 @@ VisA*.zip
 # Converter output
 yolo_*/
 
+# Training: local config, job evidence, model files
+training/config.local.yaml
+training/work/
+*.pt
+*.onnx
+*.engine
+
 # Editors / OS
 .vscode/
 .idea/

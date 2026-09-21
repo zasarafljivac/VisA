@@ -1,0 +1,5 @@
+# Preserve the pinned PyTorch 2.2 / CUDA 12.1 environment of the training container.
+# A dependency conflict must fail, never silently replace the CUDA build.
+torch==2.2.0
+torchvision==0.17.0
+numpy==1.26.4

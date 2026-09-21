@@ -1,0 +1,6 @@
+# Local controller/converter only. Does NOT install torch, CUDA or Ultralytics.
+boto3>=1.35,<2
+PyYAML>=6.0.2,<7
+numpy>=1.26.4,<3
+opencv-python-headless>=4.10.0.84,<5
+Pillow>=10.4.0,<13

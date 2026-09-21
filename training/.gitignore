@@ -1,0 +1,11 @@
+config.local.yaml
+.venv*/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+work/
+weights/*
+!weights/README.md
+*.pt
+*.onnx
+*.engine

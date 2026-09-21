@@ -1,0 +1,44 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Virtual environments
+.venv*/
+venv/
+env/
+
+# VisA source dataset (downloaded separately, see SOURCE_ATTRIBUTION.md)
+VisA*.tar
+VisA*.tar.gz
+VisA*.zip
+/candle/
+/capsules/
+/cashew/
+/chewinggum/
+/fryum/
+/macaroni1/
+/macaroni2/
+/pcb1/
+/pcb2/
+/pcb3/
+/pcb4/
+/pipe_fryum/
+/split_csv/
+/image_anno.csv
+
+# Converter output
+yolo_*/
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+*.swp

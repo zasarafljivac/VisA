@@ -1,0 +1,5 @@
+# CPU-only conversion. No torch, CUDA, Ultralytics or GPU required.
+# Compatible release ranges; pip chooses a release supported by your Python.
+numpy>=1.26.4,<3
+opencv-python-headless>=4.10.0.84,<5
+Pillow>=10.4.0,<13
